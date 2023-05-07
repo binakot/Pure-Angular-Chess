@@ -8,6 +8,7 @@ $ nvm install --lts
 $ nvm use --lts
 $ npm install -g @angular/cli
 $ ng new pure-angular-chess
+$ npm run ci
 ```
 
 ---
