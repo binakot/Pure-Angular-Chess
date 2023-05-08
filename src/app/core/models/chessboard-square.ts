@@ -3,15 +3,23 @@ import { ChessPieceType } from "../enums/chess-piece-type";
 import { CHESSBOARD_SQUARE_EMPTY } from "../constants/chessboard.constants";
 
 export class ChessboardSquare {
-  color: ChessPieceColor;
   piece: ChessPieceType | null;
+  color: ChessPieceColor | null;
 
-  constructor(color: ChessPieceColor, piece: ChessPieceType | null) {
-    this.color = color;
+  constructor(piece: ChessPieceType | null,
+              color: ChessPieceColor | null) {
     this.piece = piece;
+    this.color = color;
+  }
+
+  static buildEmpty(): ChessboardSquare {
+    return new ChessboardSquare(null, null);
   }
 
   toString(): string {
-    return `SQUARE: ${this.color} ${this.piece ?? CHESSBOARD_SQUARE_EMPTY}`
+    if (this.piece == null || this.color == null) {
+      return `${CHESSBOARD_SQUARE_EMPTY}`;
+    }
+    return `${this.color} ${this.piece}`
   }
 }

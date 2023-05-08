@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
 import { ChessboardGrid } from "../models/chessboard-grid";
 import { numberToLetter } from "../utils/string.utils";
+import * as initialChessboardState from "../../assets/static/initial-chessboard-state.json";
+import { ChessboardState } from "../models/chessboard-state";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChessGameService {
-  board: ChessboardGrid;
+  grid: ChessboardGrid;
 
   constructor() {
-    this.board = new ChessboardGrid();
+    this.grid = new ChessboardGrid();
+    this.grid.applyState(initialChessboardState as ChessboardState);
   }
 
   public debug(): void {
-    for (let r = this.board.grid.length - 1; r >= 0; r--) {
-      for (let c = 0; c < this.board.grid[r].length; c++) {
-        console.log(`${numberToLetter(c + 1)}${r + 1} ${this.board.grid[r][c]}`);
+    for (let r = this.grid.grid.length - 1; r >= 0; r--) {
+      for (let c = 0; c < this.grid.grid[r].length; c++) {
+        console.log(`${numberToLetter(c + 1)}${r + 1} ${this.grid.grid[r][c]}`);
       }
     }
   }

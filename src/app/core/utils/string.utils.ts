@@ -12,3 +12,16 @@ export function numberToLetter(num: number, upper = false): string {
   const letter = String.fromCharCode(96 + num);
   return upper ? letter.toUpperCase() : letter;
 }
+
+/**
+ * Convert letter to number.
+ * For example, a -> 1, b -> 2, etc...
+ *
+ * @param letter Input string value.
+ */
+export function letterToNumber(letter: string): number {
+  if (letter.length !== 1) {
+    throw new Error(`String must contains single letter only: ${letter}`);
+  }
+  return letter.toLowerCase().charCodeAt(0) - 96;
+}
