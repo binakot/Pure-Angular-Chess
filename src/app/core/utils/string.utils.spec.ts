@@ -1,4 +1,4 @@
-import { letterToNumber, numberToLetter } from "./string.utils";
+import { letterToNumber, numberToLetter } from "@/core/utils/string.utils";
 
 describe('numberToLetter', () => {
   it('should return a from 1', () => {

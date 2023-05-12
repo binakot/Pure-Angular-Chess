@@ -1,1 +1,14 @@
-<p>TODO RENDER</p>
+<div class="chessboard">
+  <ng-container *ngFor="let row of this.chessGameService.grid.grid; let r = index">
+    <ng-container *ngFor="let column of this.chessGameService.grid.grid[r]; let c = index">
+      <div [class.black]="(r + c) % 2 !== 0"
+           [class.white]="(r + c) % 2 === 0"
+           class="square">
+        <img *ngIf="!column.isEmpty()"
+             alt=""
+             class="piece"
+             src="{{ this.chessGameService.imageSourceByPieceAndColor(column.piece!, column.color!)}}"/>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

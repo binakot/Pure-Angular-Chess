@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ChessboardGrid } from "../models/chessboard-grid";
-import { numberToLetter } from "../utils/string.utils";
-import * as initialChessboardState from "../../assets/static/initial-chessboard-state.json";
-import { ChessboardState } from "../models/chessboard-state";
+import { ChessboardGrid } from "@/core/models/chessboard-grid";
+import { numberToLetter } from "@/core/utils/string.utils";
+import * as initialChessboardState from "@/assets/static/initial-chessboard-state.json";
+import { ChessboardState } from "@/core/models/chessboard-state";
+import { ChessPieceType } from "@/core/enums/chess-piece-type";
+import { ChessPieceColor } from "@/core/enums/chess-piece-color";
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +23,9 @@ export class ChessGameService {
         console.log(`${numberToLetter(c + 1)}${r + 1} ${this.grid.grid[r][c]}`);
       }
     }
+  }
+
+  public imageSourceByPieceAndColor(piece: ChessPieceType, color: ChessPieceColor): string {
+    return `app/assets/images/chess/pieces/chess-piece-${color.toLowerCase()}-${piece.toLowerCase()}.svg`;
   }
 }

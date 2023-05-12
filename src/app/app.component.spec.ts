@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { ChessboardComponent } from "./core/components/chessboard/chessboard.component";
+import { AppComponent } from '@/app.component';
+import { ChessboardComponent } from "@/core/components/chessboard/chessboard.component";
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({

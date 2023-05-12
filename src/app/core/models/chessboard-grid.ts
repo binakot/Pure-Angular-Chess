@@ -1,9 +1,9 @@
-import { ChessboardSquare } from "./chessboard-square";
-import { CHESSBOARD_COLUMNS, CHESSBOARD_ROWS } from "../constants/chessboard.constants";
-import { ChessboardState } from "./chessboard-state";
-import { letterToNumber } from "../utils/string.utils";
-import { ChessPieceType } from "../enums/chess-piece-type";
-import { ChessPieceColor } from "../enums/chess-piece-color";
+import { ChessboardSquare } from "@/core/models/chessboard-square";
+import { CHESSBOARD_COLUMNS, CHESSBOARD_ROWS } from "@/core/constants/chessboard.constants";
+import { ChessboardState } from "@/core/models/chessboard-state";
+import { letterToNumber } from "@/core/utils/string.utils";
+import { ChessPieceType } from "@/core/enums/chess-piece-type";
+import { ChessPieceColor } from "@/core/enums/chess-piece-color";
 
 export class ChessboardGrid {
   grid: ChessboardSquare[][];

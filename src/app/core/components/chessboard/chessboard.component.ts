@@ -1,21 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ChessGameService } from "../../services/chess-game.service";
+import { Component } from '@angular/core';
+import { ChessGameService } from "@/core/services/chess-game.service";
 
 @Component({
   selector: 'app-chessboard',
   templateUrl: './chessboard.component.html',
   styleUrls: ['./chessboard.component.scss']
 })
-export class ChessboardComponent implements OnInit {
+export class ChessboardComponent {
 
-  constructor(private chessGameService: ChessGameService) {
-  }
-
-  ngOnInit(): void {
-    this.render();
-  }
-
-  private render(): void {
-    this.chessGameService.debug(); // TODO Render!
+  constructor(public chessGameService: ChessGameService) {
   }
 }

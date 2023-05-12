@@ -1,0 +1,28 @@
+.chessboard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  display: flex;
+  width: 12.5%;
+  aspect-ratio: 1;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.black {
+  background-color: dimgray;
+  color: white;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
+
+.piece {
+  width: 80%;
+  height: 80%
+}

@@ -1,6 +1,6 @@
-import { ChessPieceColor } from "../enums/chess-piece-color";
-import { ChessPieceType } from "../enums/chess-piece-type";
-import { CHESSBOARD_SQUARE_EMPTY } from "../constants/chessboard.constants";
+import { ChessPieceColor } from "@/core/enums/chess-piece-color";
+import { ChessPieceType } from "@/core/enums/chess-piece-type";
+import { CHESSBOARD_SQUARE_EMPTY } from "@/core/constants/chessboard.constants";
 
 export class ChessboardSquare {
   piece: ChessPieceType | null;
@@ -14,6 +14,10 @@ export class ChessboardSquare {
 
   static buildEmpty(): ChessboardSquare {
     return new ChessboardSquare(null, null);
+  }
+
+  isEmpty(): boolean {
+    return this.piece === null || this.color === null;
   }
 
   toString(): string {

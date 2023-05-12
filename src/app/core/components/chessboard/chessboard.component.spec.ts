@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChessboardComponent } from './chessboard.component';
+import { ChessboardComponent } from '@/core/components/chessboard/chessboard.component';
 
 describe('ChessboardComponent', () => {
   let component: ChessboardComponent;
